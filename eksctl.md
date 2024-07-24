@@ -37,3 +37,16 @@ Amazon EKS is a managed Kubernetes service, in the sense that AWS runs the Kuber
 That means, AWS runs the master nodes, and you run the worker nodes.
 
 AWS runs three master nodes in three availability zones in your selected region.
+
+### The application is made of two parts:
+
+A front-end written in Node.js and Express.
+A MongoDB to persist the data.
+
+While it might not seem a lot, if you forget to delete your cluster, it could add up quickly.
+
+That's why you should always delete your Amazon EKS cluster when you don't need it anymore.
+
+You can do this conveniently with eksctl:
+
+> eksctl delete cluster --region=eu-west-2 --name=knote
